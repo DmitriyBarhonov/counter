@@ -1,4 +1,4 @@
-import { click } from "@testing-library/user-event/dist/click"
+
 import React from "react"
 import s from '../styleCounter.module.css'
 type ButtonIncrType = {
