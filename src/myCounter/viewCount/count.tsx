@@ -17,14 +17,6 @@ export const Count: React.FC<CountPropsType> = (props) => {
     const TITLE_BUTTON_INC = "inc"
     const TITLE_BUTTON_RESET = "reset"
 
-
-
-
-    // let disabledInc: boolean = false
-    // let disabledReset: boolean = false
-    // if (countValue >= maxValueCount) disabledInc = true
-    // if (countValue === startValueCount) disabledReset = true
-
     const styleCount: string = countValue === maxValueCount ? s.counter_max : ""
     const styleButtonDisableInc: string = countValue === maxValueCount ? s.button_disable : s.button
     const styleButtonDisableReset: string = countValue === startValueCount ? s.button_disable : s.button

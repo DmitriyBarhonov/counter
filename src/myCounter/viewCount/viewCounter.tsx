@@ -4,12 +4,12 @@ type ViewCounterPropsType = {
     styleCount: string
 
 }
-export const ViewCounter: React.FC <ViewCounterPropsType> = (props)=>{
+export const ViewCounter: React.FC <ViewCounterPropsType> = ({styleCount,countValue})=>{
 
 
     return (
         <>
-            <div className={props.styleCount}>{props.countValue}</div>
+            <div className={styleCount}>{countValue}</div>
         </>
     )
 }

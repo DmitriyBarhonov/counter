@@ -17,24 +17,27 @@ export const RootCounter = () => {
     }
 
     const resetCounter = () => {
-        setCountValue(0)
+        setCountValue(startValueCount)
     }
 
-    const handleSetMax = (value: number) => {
-        setMaxValueCount(value)
+    const handlerSettingNewValues = (maxValue: number, startValue: number) => {
+        setCountValue(startValueCount)
+        setMaxValueCount(maxValue)
+        setStartValueCount(startValue)
+
     }
-    console.log(`rerender root`);
+    console.log(countValue);
     
-
     return (
         <div className={s.grid}>
             <Count startValueCount={startValueCount}
                 maxValueCount={maxValueCount}
                 countValue={countValue}
                 clickIncr={clickIncr}
-                resetCounter={resetCounter} />
+                resetCounter={resetCounter} 
+                />
 
-                <SettingCounter />
+                <SettingCounter   handlerSettingNewValues={handlerSettingNewValues} />
         </div>
 
     )
