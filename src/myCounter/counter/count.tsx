@@ -1,7 +1,7 @@
-import { ViewCounter } from "./viewCounter"
+import { ViewCounter } from "./viewCount/viewCounter"
 import { SuperButton } from "../button/superButton"
 import s from '../styleCounter.module.css'
-import React from "react"
+import React, { useEffect } from "react"
 
 type CountPropsType = {
     countValue: number

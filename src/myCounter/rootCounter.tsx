@@ -1,16 +1,14 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import s from './styleCounter.module.css'
-import { Count } from "./viewCount/count"
+import { Count } from "./counter/count"
 import { SettingCounter } from "./setting/settingCounter";
+import { log } from "console";
 
 export const RootCounter = () => {
 
     const [countValue, setCountValue] = useState(0)
     const [maxValueCount, setMaxValueCount] = useState(5)
-    const [startValueCount, setStartValueCount] = useState(0)
-
-
-
+    const [startValueCount, setStartValueCount] = useState(0)   
 
     const clickIncr = () => {
         setCountValue(countValue =>countValue + 1)
@@ -21,12 +19,12 @@ export const RootCounter = () => {
     }
 
     const handlerSettingNewValues = (maxValue: number, startValue: number) => {
-        setCountValue(startValueCount)
         setMaxValueCount(maxValue)
         setStartValueCount(startValue)
-
+        setCountValue(startValue)
     }
-    console.log(countValue);
+    
+
     
     return (
         <div className={s.grid}>
@@ -36,8 +34,7 @@ export const RootCounter = () => {
                 clickIncr={clickIncr}
                 resetCounter={resetCounter} 
                 />
-
-                <SettingCounter   handlerSettingNewValues={handlerSettingNewValues} />
+                <SettingCounter   startValueCount={startValueCount} handlerSettingNewValues={handlerSettingNewValues} />
         </div>
 
     )

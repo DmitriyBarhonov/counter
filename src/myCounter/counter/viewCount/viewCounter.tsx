@@ -1,4 +1,5 @@
-import React from "react"
+import React, { useEffect } from "react"
+import s from '../styleCounter.module.css'
 type ViewCounterPropsType = {
     countValue: number
     styleCount: string
@@ -6,6 +7,7 @@ type ViewCounterPropsType = {
 }
 export const ViewCounter: React.FC <ViewCounterPropsType> = ({styleCount,countValue})=>{
 
+ 
 
     return (
         <>
